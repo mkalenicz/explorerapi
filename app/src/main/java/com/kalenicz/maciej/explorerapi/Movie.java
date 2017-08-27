@@ -18,15 +18,18 @@ public class Movie {
     @SerializedName("title")
     private String title;
 
-
     @SerializedName("overview")
     private String overview;
 
-    public Movie(String posterPath, boolean adult, String title, String overview) {
+    @SerializedName("release_date")
+    private String releaseDate;
+
+    public Movie(String posterPath, boolean adult, String title, String overview, String releaseDate) {
         this.posterPath = posterPath;
         this.adult = adult;
         this.title = title;
         this.overview = overview;
+        this.releaseDate = releaseDate;
     }
 
     public String getPosterPath() {
@@ -59,5 +62,13 @@ public class Movie {
 
     public void setOverview(String overview) {
         this.overview = overview;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

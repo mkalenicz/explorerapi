@@ -31,13 +31,15 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="name" />
+            android:text="name"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/date_list_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="description" />
+            android:text="date" />
 
     </LinearLayout>
 
