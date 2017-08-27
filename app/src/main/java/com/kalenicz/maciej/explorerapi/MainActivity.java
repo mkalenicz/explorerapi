@@ -16,6 +16,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private final String TAG = MainActivity.class.getSimpleName();
     private static final String API_KEY = "dd951c82fc0c3b137497f8ea1ef9cf01";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        
+
         Call<MoviesResponse> call = apiService.getTopRatedMovies(API_KEY);
         call.enqueue(new Callback<MoviesResponse>() {
             @Override

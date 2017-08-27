@@ -38,18 +38,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         holder.movieTitle.setText(movies.get(position).getTitle());
         holder.movieYear.setText("Release date: " + movies.get(position).getReleaseDate());
         holder.movieRating.setText(movies.get(position).getVoteAverage().toString());
-//holder.img.setImageBitmap(mBitmap);
-        //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(holder.img);
-
-        //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(holder.img);
-     //  Picasso.with(context).load("https://image.tmdb.org/t/p/w185/" + movies.get(position).getPosterPath()).into(img);
-
-//        Picasso.with(context)
-//                .load("https://image.tmdb.org/t/p/w185" + movies.get(position).getPosterPath())
-//                .into(holder.img);
-        //holder.img.setImageURI(movies.get(position).getPosterPath());
-
-
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(View view, int pos) {
@@ -59,20 +47,16 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
                 //ADD DATA TO OUR INTENT
                 i.putExtra("Name", movies.get(position).getTitle());
-//                i.putExtra("Position",positions[position]);
-                i.putExtra("Image",movies.get(position).getPosterPath());
+                i.putExtra("Image", movies.get(position).getPosterPath());
                 i.putExtra("Date", movies.get(position).getReleaseDate());
                 i.putExtra("Description", movies.get(position).getOverview());
                 i.putExtra("Rating", movies.get(position).getVoteAverage().toString());
-
-//                i.putExtra("Production", movies.get(position).getProductionCountries().toString());
 
                 //START DETAIL ACTIVITY
                 context.startActivity(i);
 
             }
         });
-//holder.movieDescription.setText(movies.get(position).getOverview());
     }
 
     @Override
@@ -81,12 +65,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     }
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        LinearLayout moviesLayout;
         TextView movieTitle;
         TextView movieYear;
         TextView movieRating;
-        TextView movieDescription;
-        //ImageView img;
         private ItemClickListener itemClickListener;
 
         public MovieViewHolder(View v) {
@@ -94,8 +75,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             movieTitle = (TextView) v.findViewById(R.id.name);
             movieYear = (TextView) v.findViewById(R.id.date_list_item);
             movieRating = (TextView) v.findViewById(R.id.rating_text);
-           // img = (ImageView) v.findViewById(R.id.rating_image);
-//            movieDescription = (TextView) v.findViewById(R.id.description);
             itemView.setOnClickListener(this);
         }
 

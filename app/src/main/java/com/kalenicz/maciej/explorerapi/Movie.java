@@ -2,7 +2,6 @@ package com.kalenicz.maciej.explorerapi;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 
 /**
  * Created by maciej on 26.08.2017.
@@ -29,17 +28,14 @@ public class Movie {
     @SerializedName("vote_average")
     private Double voteAverage;
 
-    @SerializedName("production_countries")
-    private List<ProductionCountry> productionCountries;
 
-    public Movie(String posterPath, boolean adult, String title, String overview, String releaseDate, Double voteAverage, List<ProductionCountry> productionCountries) {
+    public Movie(String posterPath, boolean adult, String title, String overview, String releaseDate, Double voteAverage) {
         this.posterPath = posterPath;
         this.adult = adult;
         this.title = title;
         this.overview = overview;
         this.releaseDate = releaseDate;
         this.voteAverage = voteAverage;
-        this.productionCountries = productionCountries;
     }
 
     public String getPosterPath() {
@@ -90,11 +86,4 @@ public class Movie {
         this.voteAverage = voteAverage;
     }
 
-    public List<ProductionCountry> getProductionCountries() {
-        return productionCountries;
-    }
-
-    public void setProductionCountries(List<ProductionCountry> productionCountries) {
-        this.productionCountries = productionCountries;
-    }
 }
