@@ -29,6 +29,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     public void onBindViewHolder(MovieViewHolder holder, int position) {
 holder.movieTitle.setText(movies.get(position).getTitle());
 holder.movieYear.setText("Release date: " + movies.get(position).getReleaseDate());
+        holder.movieRating.setText(movies.get(position).getVoteAverage().toString());
+
 //holder.movieDescription.setText(movies.get(position).getOverview());
     }
 
@@ -41,11 +43,13 @@ holder.movieYear.setText("Release date: " + movies.get(position).getReleaseDate(
         LinearLayout moviesLayout;
         TextView movieTitle;
         TextView movieYear;
+        TextView movieRating;
         TextView movieDescription;
         public MovieViewHolder (View v){
             super(v);
             movieTitle = (TextView) v.findViewById(R.id.name);
             movieYear = (TextView) v.findViewById(R.id.date_list_item);
+            movieRating = (TextView) v.findViewById(R.id.rating_text);
 //            movieDescription = (TextView) v.findViewById(R.id.description);
 
         }
