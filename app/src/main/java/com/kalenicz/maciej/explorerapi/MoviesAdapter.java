@@ -1,6 +1,7 @@
 package com.kalenicz.maciej.explorerapi;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,14 +24,32 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
         return new MovieViewHolder(view);
+
     }
 
     @Override
-    public void onBindViewHolder(MovieViewHolder holder, int position) {
-holder.movieTitle.setText(movies.get(position).getTitle());
-holder.movieYear.setText("Release date: " + movies.get(position).getReleaseDate());
+    public void onBindViewHolder(MovieViewHolder holder, final int position) {
+        holder.movieTitle.setText(movies.get(position).getTitle());
+        holder.movieYear.setText("Release date: " + movies.get(position).getReleaseDate());
         holder.movieRating.setText(movies.get(position).getVoteAverage().toString());
 
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClick(View view, int pos) {
+
+                //INTENT OBJ
+                Intent i = new Intent(context, DetailActivity.class);
+
+                //ADD DATA TO OUR INTENT
+                i.putExtra("Name", movies.get(position).getTitle());
+//                i.putExtra("Position",positions[position]);
+//                i.putExtra("Image",images[position]);
+
+                //START DETAIL ACTIVITY
+                context.startActivity(i);
+
+            }
+        });
 //holder.movieDescription.setText(movies.get(position).getOverview());
     }
 
@@ -39,19 +58,30 @@ holder.movieYear.setText("Release date: " + movies.get(position).getReleaseDate(
         return movies.size();
     }
 
-    public static class MovieViewHolder extends RecyclerView.ViewHolder {
+    public static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         LinearLayout moviesLayout;
         TextView movieTitle;
         TextView movieYear;
         TextView movieRating;
         TextView movieDescription;
-        public MovieViewHolder (View v){
+        private ItemClickListener itemClickListener;
+
+        public MovieViewHolder(View v) {
             super(v);
             movieTitle = (TextView) v.findViewById(R.id.name);
             movieYear = (TextView) v.findViewById(R.id.date_list_item);
             movieRating = (TextView) v.findViewById(R.id.rating_text);
 //            movieDescription = (TextView) v.findViewById(R.id.description);
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            this.itemClickListener.onItemClick(v, getLayoutPosition());
+        }
+
+        public void setItemClickListener(ItemClickListener ic) {
+            this.itemClickListener = ic;
         }
     }
 
