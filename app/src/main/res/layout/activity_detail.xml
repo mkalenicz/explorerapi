@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
             <TextView
                 android:id="@+id/title_detail_text"
@@ -25,21 +26,24 @@
                 android:layout_margin="8dp"
                 android:text="Title"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/date_detail_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Relase date" />
+                android:text="Relase date"
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/production_detail_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Production country:" />
+                android:text="Production country:"
+                android:gravity="center"/>
 
             <TextView
 
@@ -48,7 +52,8 @@
                 android:layout_gravity="bottom"
                 android:textSize="30sp"
                 android:text="Rating:"
-                android:id="@+id/rating_detail_text"/>
+                android:id="@+id/rating_detail_text"
+                android:gravity="center"/>
 
 
 
@@ -58,8 +63,9 @@
         <ImageView
             android:id="@+id/image_activity_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_height="300dp"
+            android:layout_weight="1"
+            android:padding="16dp"/>
 
 
     </LinearLayout>
@@ -70,7 +76,7 @@
         android:background="@color/colorPrimary">
 
         <TextView
-            android:padding="8dp"
+            android:padding="16dp"
             android:id="@+id/activity_detail_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

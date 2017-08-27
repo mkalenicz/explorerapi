@@ -40,7 +40,7 @@ public class DetailActivity extends Activity {
 
        // Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").into(img);
 
-        Picasso.with(this).load("https://image.tmdb.org/t/p/w185"+img).into(imageView);
+        Picasso.with(this).load("https://image.tmdb.org/t/p/w300"+img).into(imageView);
 
         //movies.getPosterPath()).into(imageView)
 
