@@ -42,7 +42,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(holder.img);
 
         //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(holder.img);
-       // Picasso.with(context).load("https://image.tmdb.org/t/p/w185/" + movies.get(position).getPosterPath()).into(holder.img);
+     //  Picasso.with(context).load("https://image.tmdb.org/t/p/w185/" + movies.get(position).getPosterPath()).into(img);
 
 //        Picasso.with(context)
 //                .load("https://image.tmdb.org/t/p/w185" + movies.get(position).getPosterPath())
@@ -60,7 +60,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 //ADD DATA TO OUR INTENT
                 i.putExtra("Name", movies.get(position).getTitle());
 //                i.putExtra("Position",positions[position]);
-             //   i.putExtra("Image",movies.get(position).getPosterPath());
+                i.putExtra("Image",movies.get(position).getPosterPath());
 
                 //START DETAIL ACTIVITY
                 context.startActivity(i);
