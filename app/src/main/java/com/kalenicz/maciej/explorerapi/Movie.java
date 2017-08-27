@@ -19,11 +19,14 @@ public class Movie {
     private String title;
 
 
+    @SerializedName("overview")
+    private String overview;
 
-    public Movie(String posterPath, boolean adult, String title) {
+    public Movie(String posterPath, boolean adult, String title, String overview) {
         this.posterPath = posterPath;
         this.adult = adult;
         this.title = title;
+        this.overview = overview;
     }
 
     public String getPosterPath() {
@@ -48,5 +51,13 @@ public class Movie {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 }

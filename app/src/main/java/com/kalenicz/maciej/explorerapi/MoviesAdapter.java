@@ -28,6 +28,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     @Override
     public void onBindViewHolder(MovieViewHolder holder, int position) {
 holder.movieTitle.setText(movies.get(position).getTitle());
+//holder.movieDescription.setText(movies.get(position).getOverview());
     }
 
     @Override

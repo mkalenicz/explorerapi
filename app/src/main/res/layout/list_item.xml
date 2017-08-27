@@ -4,14 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="8dp">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_if_viddler_291690"
+            android:layout_margin="16dp"/>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/linear_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
+
+
 
         <TextView
             android:id="@+id/name"
@@ -24,13 +38,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="description" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_gravity="center_vertical"
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/rating_image"
