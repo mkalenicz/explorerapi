@@ -61,6 +61,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 i.putExtra("Name", movies.get(position).getTitle());
 //                i.putExtra("Position",positions[position]);
                 i.putExtra("Image",movies.get(position).getPosterPath());
+                i.putExtra("Date", movies.get(position).getReleaseDate());
+                i.putExtra("Description", movies.get(position).getOverview());
+                i.putExtra("Rating", movies.get(position).getVoteAverage().toString());
+
+//                i.putExtra("Production", movies.get(position).getProductionCountries().toString());
 
                 //START DETAIL ACTIVITY
                 context.startActivity(i);

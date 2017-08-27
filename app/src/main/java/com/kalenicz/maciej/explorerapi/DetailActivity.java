@@ -15,7 +15,12 @@ import java.util.List;
 
 public class DetailActivity extends Activity {
     TextView nameTxt;
+//   TextView countryTxt;
    ImageView imageView;
+    TextView dateTxt;
+    TextView rateTxt;
+    TextView descriptionTxt;
+
     //public List<Movie> movies;
 
     @Override
@@ -32,10 +37,19 @@ public class DetailActivity extends Activity {
 
         //final String pos=i.getExtras().getString("Position");
       final String img =i.getExtras().getString("Image");
+      final String date =i.getExtras().getString("Date");
+      final String rate =i.getExtras().getString("Rating");
+      final String descrip =i.getExtras().getString("Description");
+
+//        final String country =i.getExtras().getString("Production");
 
         //REFERENCE VIEWS FROM XML
       imageView= (ImageView) findViewById(R.id.image_activity_detail);
-        nameTxt= (TextView) findViewById(R.id.activity_detail_text);
+        nameTxt= (TextView) findViewById(R.id.title_detail_text);
+        dateTxt= (TextView) findViewById(R.id.date_detail_text);
+        rateTxt = (TextView) findViewById(R.id.rating_detail_text);
+        descriptionTxt = (TextView) findViewById(R.id.description_detail_text);
+//        countryTxt = (TextView) findViewById(R.id.production_detail_text);
        // posTxt= (TextView) findViewById(R.id.posTxt);
 
        // Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").into(img);
@@ -46,7 +60,11 @@ public class DetailActivity extends Activity {
 
         //ASSIGN DATA TO THOSE VIEWS
       //img.setImageResource(image);
-        nameTxt.setText("NAME :   "+name);
+        nameTxt.setText(name);
+        dateTxt.setText("Relase date: " + date);
+        rateTxt.setText("Rating: " + rate);
+        descriptionTxt.setText(descrip);
+//        countryTxt.setText(country);
        // posTxt.setText("POSITION : "+pos);
     }
 
