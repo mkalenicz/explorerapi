@@ -51,6 +51,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 i.putExtra("Date", movies.get(position).getReleaseDate());
                 i.putExtra("Description", movies.get(position).getOverview());
                 i.putExtra("Rating", movies.get(position).getVoteAverage().toString());
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 //START DETAIL ACTIVITY
                 context.startActivity(i);

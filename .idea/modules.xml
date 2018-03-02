@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ExplorerAPI.iml" filepath="$PROJECT_DIR$/ExplorerAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/explorerapi.iml" filepath="$PROJECT_DIR$/explorerapi.iml" />
     </modules>
   </component>
 </project>
